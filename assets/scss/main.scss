@@ -1,0 +1,149 @@
+@use "./base/reset_css";
+@use "./mixin/mediaqueries" as mq;
+
+// Primary
+$Blue: hsl(246, 80%, 60%);
+$Light-Orange: hsl(15, 100%, 70%); //work
+$Soft-Blue: hsl(195, 74%, 62%); //play
+$Light-Red: hsl(348, 100%, 68%); // study
+$Lime-Green: hsl(145, 58%, 55%); //exercise
+$Violet: hsl(264, 64%, 52%); //social
+$Soft-Orange: hsl(43, 84%, 65%); //self care
+
+// Neutral
+$Very-Dark-Blue: hsl(226, 43%, 10%);
+$Dark-Blue: hsl(235, 46%, 20%);
+$Desaturated-Blue: hsl(235, 45%, 61%);
+$Pale-Blue: hsl(236, 100%, 87%);
+
+$font-size: 18px;
+$font-fam: "Rubik", Arial, sans-serif;
+$weight-1: 300;
+$weight-2: 400;
+$weight-3: 500;
+
+main {
+  font-size: $font-size;
+  font-family: $font-fam;
+  color: $Pale-Blue;
+  font-weight: $weight-1;
+  background-color: $Very-Dark-Blue;
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .profile-card {
+    background-color: $Dark-Blue;
+    height: auto;
+  }
+  .work-card {
+    background-color: $Light-Orange;
+  }
+  .play-card {
+    background-color: $Soft-Blue;
+  }
+  .study-card {
+    background-color: $Light-Red;
+  }
+  .exercise-card {
+    background-color: $Lime-Green;
+  }
+  .social-card {
+    background-color: $Violet;
+  }
+  .selfCare-card {
+    background-color: $Soft-Orange;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  height: 10rem;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  .card-icon {
+    position: absolute;
+    top: -0.3rem;
+    right: 0;
+    height: 4.5rem;
+    width: 4rem;
+    margin-right: 1rem;
+    object-fit: fill;
+  }
+  .container {
+    position: absolute;
+    background-color: $Dark-Blue;
+    bottom: 0;
+    height: 7.8rem;
+    width: 100%;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        font-weight: $weight-3;
+      }
+    }
+    .details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      .present {
+        font-weight: $weight-2;
+        font-size: 2rem;
+      }
+      .previous {
+        font-weight: $weight-1;
+        text-wrap: wrap;  
+      }
+    }
+  }
+
+  .profile {
+    background-color: $Blue;
+    border-radius: 0.8rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    gap: 1.5rem;
+    img {
+      border-radius: 50%;
+      height: 4rem;
+      width: 4rem;
+      border: 0.1rem solid $Pale-Blue;
+    }
+    p {
+      color: $Desaturated-Blue;
+    }
+    span {
+      display: block;
+      font-size: 1.5rem;
+      color: $Pale-Blue;
+    }
+  }
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    color: $Desaturated-Blue;
+
+    .active {
+      color: $Pale-Blue;
+      font-weight: $weight-2;
+    }
+  }
+}

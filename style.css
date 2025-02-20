@@ -1,0 +1,145 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block; /* Removes the inline-block space below images */
+  max-width: 100%; /* Ensures images don't overflow their container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+main {
+  font-size: 18px;
+  font-family: "Rubik", Arial, sans-serif;
+  color: hsl(236, 100%, 87%);
+  font-weight: 300;
+  background-color: hsl(226, 43%, 10%);
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main .profile-card {
+  background-color: hsl(235, 46%, 20%);
+  height: auto;
+}
+main .work-card {
+  background-color: hsl(15, 100%, 70%);
+}
+main .play-card {
+  background-color: hsl(195, 74%, 62%);
+}
+main .study-card {
+  background-color: hsl(348, 100%, 68%);
+}
+main .exercise-card {
+  background-color: hsl(145, 58%, 55%);
+}
+main .social-card {
+  background-color: hsl(264, 64%, 52%);
+}
+main .selfCare-card {
+  background-color: hsl(43, 84%, 65%);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  height: 10rem;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+}
+.card .card-icon {
+  position: absolute;
+  top: -0.3rem;
+  right: 0;
+  height: 4.5rem;
+  width: 4rem;
+  margin-right: 1rem;
+  object-fit: fill;
+}
+.card .container {
+  position: absolute;
+  background-color: hsl(235, 46%, 20%);
+  bottom: 0;
+  height: 7.8rem;
+  width: 100%;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.card .container .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .container .card-header .title {
+  font-weight: 500;
+}
+.card .container .details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.card .container .details .present {
+  font-weight: 400;
+  font-size: 2rem;
+}
+.card .container .details .previous {
+  font-weight: 300;
+  text-wrap: wrap;
+}
+.card .profile {
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 0.8rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.card .profile img {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  border: 0.1rem solid hsl(236, 100%, 87%);
+}
+.card .profile p {
+  color: hsl(235, 45%, 61%);
+}
+.card .profile span {
+  display: block;
+  font-size: 1.5rem;
+  color: hsl(236, 100%, 87%);
+}
+.card .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  color: hsl(235, 45%, 61%);
+}
+.card .navigation .active {
+  color: hsl(236, 100%, 87%);
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=style.css.map */

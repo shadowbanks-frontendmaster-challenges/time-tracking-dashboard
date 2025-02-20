@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block; /* Removes the inline-block space below images */
+  max-width: 100%; /* Ensures images don't overflow their container */
+  height: auto; /* Maintains aspect ratio */
+}
