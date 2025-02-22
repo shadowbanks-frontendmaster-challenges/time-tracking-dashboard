@@ -150,6 +150,10 @@ main .selfCare-card {
   color: hsl(236, 100%, 87%);
   font-weight: 400;
 }
+.card .navigation li:hover {
+  cursor: pointer;
+  color: hsl(236, 100%, 87%);
+}
 
 @media (min-width: 40rem) {
   main {
@@ -186,9 +190,13 @@ main .selfCare-card {
   .card .container {
     height: 11.5rem;
     width: 14rem;
+    transition: background-color 0.3s ease;
   }
   .card .container .card-header .title {
     font-size: 1rem;
+  }
+  .card .container .card-header .options:hover {
+    cursor: pointer;
   }
   .card .container .details {
     flex-direction: column;
@@ -200,6 +208,10 @@ main .selfCare-card {
   .card .container .details .previous {
     font-weight: 300;
     text-wrap: wrap;
+  }
+  .card .container:hover:not(.no-hover) {
+    cursor: pointer;
+    background-color: hsl(235, 46%, 40%);
   }
   .card .profile {
     justify-content: flex-start;

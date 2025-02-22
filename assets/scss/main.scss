@@ -154,6 +154,10 @@ main {
       font-weight: $weight-2;
     }
   }
+  .navigation li:hover {
+    cursor: pointer;
+    color: $Pale-Blue;
+  }
 }
 
 @include mq.respond(tablet) {
@@ -198,10 +202,14 @@ main {
     .container {
       height: 11.5rem;
       width: 14rem;
+      transition: background-color 0.3s ease;
 
       .card-header {
         .title {
           font-size: 1rem;
+        }
+        .options:hover {
+          cursor: pointer;
         }
       }
       .details {
@@ -216,6 +224,11 @@ main {
         }
       }
     }
+    .container:hover:not(.no-hover) {
+      cursor: pointer;
+      background-color: hsl(235, 46%, 40%);
+    }
+
     .profile {
       justify-content: flex-start;
       height: 85%;

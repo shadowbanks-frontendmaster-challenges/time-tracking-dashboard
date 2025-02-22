@@ -2,12 +2,24 @@ const nav = document.querySelector(".navigation");
 const navItems = document.querySelectorAll(".nav-item");
 let active = "weekly";
 
+const optionsImage = document.querySelectorAll(".options");
+optionsImage.forEach((item) => {
+  const container = item.closest(".container");
+  item.addEventListener("mouseenter", () => {
+    container.classList.add("no-hover");
+    // console.log("hovered");
+  });
+  item.addEventListener("mouseleave", () => {
+    container.classList.remove("no-hover");
+  });
+});
+
 navItems.forEach((item) => {
   item.addEventListener("click", () => {
     navItems.forEach((i) => i.classList.remove("active"));
     item.classList.add("active");
     active = item.innerHTML.toLowerCase();
-    console.log(active);
+    // console.log(active);
     populatePage(fetchData);
     // handleNavClick(item);
   });
