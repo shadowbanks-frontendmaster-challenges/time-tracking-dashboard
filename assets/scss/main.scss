@@ -22,13 +22,18 @@ $weight-1: 300;
 $weight-2: 400;
 $weight-3: 500;
 
-main {
-  font-size: $font-size;
+body {
   font-family: $font-fam;
+  background-color: $Very-Dark-Blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5rem 1rem;
+}
+main {
   color: $Pale-Blue;
   font-weight: $weight-1;
-  background-color: $Very-Dark-Blue;
-  padding: 5rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -59,11 +64,10 @@ main {
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   height: 10rem;
   position: relative;
   overflow: hidden;
-  justify-content: center;
   .card-icon {
     position: absolute;
     top: -0.3rem;
@@ -79,11 +83,11 @@ main {
     bottom: 0;
     height: 7.8rem;
     width: 100%;
-    border-radius: 0.8rem;
-    padding: 1rem;
+    border-radius: 1rem;
+    padding: 1.6rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     gap: 0.5rem;
 
     .card-header {
@@ -92,7 +96,9 @@ main {
       align-items: center;
 
       .title {
-        font-weight: $weight-3;
+        font-weight: $weight-2;
+        font-size: 1.125rem;
+        color: white;
       }
     }
     .details {
@@ -101,49 +107,184 @@ main {
       align-items: center;
       gap: 1rem;
       .present {
-        font-weight: $weight-2;
+        // font-weight: $weight-2;
         font-size: 2rem;
+        color: white;
       }
       .previous {
         font-weight: $weight-1;
-        text-wrap: wrap;  
+        text-wrap: wrap;
+        color: $Pale-Blue;
       }
     }
   }
 
   .profile {
     background-color: $Blue;
-    border-radius: 0.8rem;
-    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    padding: 2rem;
     display: flex;
     align-items: center;
-    // justify-content: center;
-    gap: 1.5rem;
+    gap: 1.8rem;
     img {
       border-radius: 50%;
       height: 4rem;
       width: 4rem;
-      border: 0.1rem solid $Pale-Blue;
+      border: 0.1rem solid white;
     }
     p {
-      color: $Desaturated-Blue;
+      color: $Pale-Blue;
     }
     span {
       display: block;
       font-size: 1.5rem;
-      color: $Pale-Blue;
+      color: white;
+      line-height: 1.2;
     }
   }
   .navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1.6rem 2rem;
     color: $Desaturated-Blue;
 
     .active {
       color: $Pale-Blue;
       font-weight: $weight-2;
     }
+  }
+}
+
+@include mq.respond(tablet) {
+  // html {
+  //   font-size: 16px;
+  // }
+  main {
+    display: grid;
+    padding: 0;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    grid-template-areas:
+      "profile profile"
+      "work play"
+      "study exercise"
+      "social selfCare";
+
+    .profile-card {
+      grid-area: profile;
+    }
+    .work-card {
+      grid-area: work;
+    }
+    .play-card {
+      grid-area: play;
+    }
+    .study-card {
+      grid-area: study;
+    }
+    .exercise-card {
+      grid-area: exercise;
+    }
+    .social-card {
+      grid-area: social;
+    }
+    .selfCare-card {
+      grid-area: selfCare;
+    }
+  }
+  .card {
+    height: 14rem;
+    width: 14rem;
+    .container {
+      height: 11.5rem;
+      width: 14rem;
+
+      .card-header {
+        .title {
+          font-size: 1rem;
+        }
+      }
+      .details {
+        flex-direction: column;
+        align-items: flex-start;
+        .present {
+          font-size: 3rem;
+        }
+        .previous {
+          font-weight: $weight-1;
+          text-wrap: wrap;
+        }
+      }
+    }
+    .profile {
+      justify-content: flex-start;
+      height: 85%;
+      span {
+        font-size: 2rem;
+      }
+      img {
+        height: 5rem;
+        width: 5rem;
+        border: 0.2rem solid white;
+      }
+    }
+  }
+  .profile-card {
+    width: auto;
+    .navigation {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@include mq.respond(desktop) {
+  html {
+    font-size: 18px;
+  }
+  body {
+    padding: 0;
+  }
+  main {
+    display: grid;
+    padding: 0;
+    grid-template: repeat(2, 1fr) / 1.1fr repeat(3, 1fr);
+    grid-template-areas:
+      "profile work play study"
+      "profile exercise social selfCare";
+  }
+  .card {
+    .container {
+      .details {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .profile {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      span {
+        font-size: 2.4rem;
+      }
+      img {
+        height: 5rem;
+        width: 5rem;
+        border: 0.2rem solid white;
+      }
+    }
+    .navigation {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+  .profile-card {
+    max-width: 15.5rem;
+  }
+}
+
+@include mq.respond(large-desktop) {
+  html {
+    font-size: 20px;
   }
 }
